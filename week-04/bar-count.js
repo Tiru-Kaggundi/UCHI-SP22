@@ -45,7 +45,7 @@ d3.json('covid.json').then(data => {
     .attr("y", height - margin.bottom)
     .attr("height", 0)
     .transition()
-    .duration(2000)
+    .duration(5000)
     .delay((d, i) => i * 100)
     .attr("y", d => y(d.cases))
     .attr("height", d => y(0) - y(d.cases));
@@ -56,7 +56,7 @@ d3.json('covid.json').then(data => {
     .attr("y", height - margin.bottom - 5)
     .attr('text-anchor', 'middle')
     .transition()
-    .duration(2000)
+    .duration(5000)
     .delay((d, i) => i * 100)
     .tween("text", function(d) {
       let i = d3.interpolate(this.textContent, d.cases)
